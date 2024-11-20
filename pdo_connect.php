@@ -6,7 +6,7 @@
 // Set the database access information as constants:
 const DBCONNSTRING ='mysql:host=localhost;dbname=CSCFA24Hospital';
 const DB_USER = 'djc3088';
-const DB_PASSWORD = '8120zrp60jRm6e';
+const DB_PASSWORD = '';
 
 
 // Make the connection:
