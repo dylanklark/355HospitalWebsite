@@ -88,3 +88,11 @@ CREATE TABLE Contraindications (
     PRIMARY KEY (Medication_ID, Contraindication),
     FOREIGN KEY (Medication_ID) REFERENCES Medications(Medication_ID)
 );
+
+CREATE TABLE Prescribes (
+    Medication_ID INT,
+	Employee_ID INT,
+    PRIMARY KEY(Medication_ID, Employee_ID),
+    FOREIGN KEY (Medication_ID) REFERENCES Medications(Medication_ID),
+    FOREIGN KEY (Employee_ID) REFERENCES Health_Care_Provider(Employee_ID)
+);
