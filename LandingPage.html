@@ -1,24 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FACT Library</title>
-	<meta charset ="utf-8"> 
+    <meta charset="UTF-8">
+    <title>Healthcare Database Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-	<h2> Books Found: </h2>
-	<table>
-		<tr>
-			<th>Book Title</th>
-			<th>Book Year</th>
-		</tr>
-	<!-- <?php foreach($result as $row) {
-		echo "<tr>";
-		echo "<td>".$row['BookTitle']."</td>";
-		echo "<td>".$row['BookYear']."</td>";
-		echo "</tr>";
-	}?>  -->
-	</table>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border border-blue-200">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-blue-800 flex items-center justify-center">
+                <span class="material-icons mr-3 text-blue-600" style="font-size: 36px;">health_and_safety</span>
+                Healthcare Search
+            </h1>
+            <p class="text-blue-700 mt-2">Find Healthcare Information</p>
+        </div>
+        <form action="Hospital_file.php" method="GET" class="space-y-4">
+            <div>
+                <label for="search-type" class="block text-sm font-medium text-blue-900 mb-2">Search By</label>
+                <select 
+                    name="search_type" 
+                    id="search-type" 
+                    class="w-full p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-blue-900"
+                >
+                    <!-- Hospital Searches -->
+                    <optgroup label="Hospital Searches">
+                        <option value="hospital_name">Hospital Name</option>
+                        <option value="hospital_location">Hospital Location</option>
+                        <option value="hospital_specialty">Hospital Specialty</option>
+                    </optgroup>
+
+                    <!-- Patient Searches -->
+                    <optgroup label="Patient Searches">
+                        <option value="patient_name">Patient Name</option>
+                        <option value="patient_location">Patient Location</option>
+                        <option value="patient_phone">Patient Phone</option>
+                    </optgroup>
+
+                    <!-- Healthcare Provider Searches -->
+                    <optgroup label="Provider Searches">
+                        <option value="provider_name">Provider Name</option>
+                        <option value="provider_specialty">Provider Specialty</option>
+                    </optgroup>
+
+                    <!-- Medication Searches -->
+                    <optgroup label="Medication Searches">
+                        <option value="medication_name">Medication Name</option>
+                        <option value="medication_side_effects">Medication Side Effects</option>
+                    </optgroup>
+
+                    <!-- Visit Searches -->
+                    <optgroup label="Visit Searches">
+                        <option value="visit_reason">Visit Reason</option>
+                        <option value="visit_diagnosis">Visit Diagnosis</option>
+                    </optgroup>
+
+                    <!-- Insurance Searches -->
+                    <optgroup label="Insurance Searches">
+                        <option value="insurance_name">Insurance Name</option>
+                        <option value="insurance_location">Insurance Location</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="search-input" class="block text-sm font-medium text-blue-900 mb-2">Search Term</label>
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        name="search_term"
+                        id="search-input"
+                        placeholder="Enter search term"
+                        class="w-full p-3 pl-10 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-blue-900"
+                    >
+                    <span class="material-icons absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-600">search</span>
+                </div>
+            </div>
+            <button 
+                type="submit" 
+                name="submit"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center"
+            >
+                <span class="material-icons mr-2">manage_search</span>
+                Search Database
+            </button>
+        </form>
+    </div>
 </body>
 </html>
-
